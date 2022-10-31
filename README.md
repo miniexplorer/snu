@@ -1,4 +1,4 @@
-# SNU — Snipe-IT Utilities
+# SNU 🗄 Snipe-IT Utilities
 
 Command-line interface (CLI) for Snipe-IT (free open-source IT asset management) extending with team checkin and checkout.
 
