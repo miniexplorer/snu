@@ -7,12 +7,12 @@ Command-line interface (CLI) for Snipe-IT (free open-source IT asset management)
 - Team checkin and checkout
 - Efficient parallel asynchronous requests processing through [AIOHTTP](https://github.com/aio-libs/aiohttp)
 - Modern user friendly CLI through [Rich](https://github.com/Textualize/rich) and [Typer](https://typer.tiangolo.com/)
-- Auto-completion
+- Command-line auto-completion
 
 ## Installation
 
 - Fill parameters.py with your ***base_url (server URL)*** and ***Authorization header (API Key)***
-- Install de the requirements
+- Install de the requirements:
 ```
 python -m pip install "typer[all]" requests aiohttp
 ```
