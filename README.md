@@ -1,6 +1,6 @@
 # SNU 🗄 Snipe-IT Utilities
 
-Command-line interface (CLI) for Snipe-IT (free open-source IT asset management) extending with team checkin and checkout.
+Command-line interface (CLI) for Snipe-IT (free open-source IT asset management) extending with features team checkin and team checkout.
 
 ## Features
 
