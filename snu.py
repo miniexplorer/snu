@@ -85,6 +85,23 @@ def cout(user: int, group: str, itens: str):
                 accessories_id_checkout(acc2req["id"], user, generate_group_json(group))
                 i += 1
 
+def draw_table_cin(jlist: list):
+    table = Table()
+    table.add_column("Pivot", style="green")
+    table.add_column("Student num.", style="green")
+    table.add_column("Name", style="green")
+    table.add_column("Item", style="green")
+    table.add_column("Location", style="green")
+
+    for cur in jlist:
+        table.add_row( str(cur["assigned_pivot_id"]),
+        cur["username"],
+        cur["name"],
+        cur["acc_name"],
+        cur["acc_location"])
+
+    console.print(table)
+
 @app.command()
 def cin(group: int, users: List[int]):
     """
@@ -106,10 +123,27 @@ def cin(group: int, users: List[int]):
 
     checkouts2 = []
     group_mark = "@!GID" + str(group) + "#"
+
     for acc in checkouts:
+        res = next((sub for sub in acclist1 if sub['id'] == acc["accessory_id"]), None)
+        acc["acc_name"] = res["name"]
+        acc["acc_location"] = res["location"]["name"]
+        acc["acc_model_number"] = res["model_number"]
         if acc["checkout_notes"] != None:
             if group_mark in acc["checkout_notes"]:
                 checkouts2.append(acc)
+    
+    draw_table_cin(checkouts2)
+
+    select1 = typer.prompt("Insert itens to checkin")
+
+    if select1 == "q":
+        raise typer.Exit()
+    else:
+        select2 = select1.split("+")
+        select3 = [eval(i) for i in select2]
+        for cur in select3:
+            accessories_id_checkin(cur)
 
 if __name__ == "__main__":
     app()

@@ -36,6 +36,11 @@ def accessories_id_checkout(id: int, assigned_to: int, note: str):
     response = requests.post(url, json=payload, headers=headers)
     print(response.text)
 
+def accessories_id_checkin(id: int):
+    url = base_url + f"/api/v1/accessories/{str(id)}/checkin"
+    response = requests.post(url, headers=headers)
+    print(response.text)
+
 def reports_activity_get(search: str, action_type: str = "checkout"):
     url = base_url \
         + "/api/v1/reports/activity?limit=200&offset=0" \

@@ -9,6 +9,8 @@ Command-line interface (CLI) for Snipe-IT (free open-source IT asset management)
 - Modern user friendly CLI through [Rich](https://github.com/Textualize/rich) and [Typer](https://typer.tiangolo.com/)
 - Command-line auto-completion
 
+![Example usage](snu.gif)
+
 ## Installation
 
 - Fill parameters.py with your ***base_url (server URL)*** and ***Authorization header (API Key)***
